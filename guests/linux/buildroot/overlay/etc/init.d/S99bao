@@ -4,10 +4,14 @@ case "$1" in
     start)
         echo "Loading bao-ipc kernel module..."
         /sbin/modprobe ipc
+        echo "Loading bao-iodispatcher kernel module..."
+        /sbin/modprobe iodispatcher
         ;;
     stop)
         echo "Unloading bao-ipc kernel module..."
         /sbin/rmmod ipc
+        echo "Unloading bao-iodispatcher kernel module..."
+        /sbin/rmmod iodispatcher
         ;;
     *)
         echo "Usage: $0 {start|stop}"
